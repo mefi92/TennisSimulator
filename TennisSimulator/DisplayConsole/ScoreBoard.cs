@@ -7,7 +7,10 @@ class ScoreBoard
 {
     public static void Main(String[] args)
     {
-        TennisMatch match = new TennisMatch(TennisSimulator.MatchType.BestOfThree);
+        TennisManager tennisManager = new TennisManager();
+        tennisManager.SetBestOfThree();
+        tennisManager.StartNewMatch();
+        TennisMatch tennisMatch = tennisManager.GetOngoingMatch();
 
         char[] scoreSequence = { 'A', 'A', 'A', 'B', 'B', 'B', 'A', 'B', 'B', 'B',
                                      'A', 'A', 'A', 'A',
@@ -36,8 +39,8 @@ class ScoreBoard
                                      'A', 'A', 'A', 'A',
                                      'A', 'A', 'A', 'A'};
 
-        ProcessScoreSequence(scoreSequence, match);
-        string status = match.GetMatchStatus();
+        ProcessScoreSequence(scoreSequence, tennisMatch);
+        string status = tennisManager.GetMatchStatus(tennisMatch);
         Console.WriteLine(status);
     }
 
@@ -50,10 +53,10 @@ class ScoreBoard
             switch (char.ToUpper(scoreChar))
             {
                 case 'A':
-                    match.ScorePointForPlayer(TennisSimulator.Constants.PlayerOneId);
+                    match.ScorePointForPlayer(Players.PlayerOne);
                     break;
                 case 'B':
-                    match.ScorePointForPlayer(TennisSimulator.Constants.PlayerTwoId);
+                    match.ScorePointForPlayer(Players.PlayerTwo);
                     break;
                 default:
                     throw new NotImplementedException();

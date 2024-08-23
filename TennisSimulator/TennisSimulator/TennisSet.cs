@@ -25,7 +25,7 @@ namespace TennisSimulator
             games.Insert(0, game);
         }
 
-        public override void ScorePointForPlayer(string player)
+        public override void ScorePointForPlayer(Players player)
         {
             TennisGame ongoingGame = GetOngoingGame();
             ongoingGame.ScorePointForPlayer(player);
@@ -34,7 +34,7 @@ namespace TennisSimulator
 
         private void CheckActualGameState(TennisGame ongoingGame)
         {
-            if (ongoingGame.IsCompleted && ongoingGame.Winner != null)
+            if (ongoingGame.IsCompleted)
             {
                 IncreaseSetScoreForPlayer(ongoingGame.Winner);
                 SetWinnerOrNewGame();

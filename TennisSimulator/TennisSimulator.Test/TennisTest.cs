@@ -3,12 +3,14 @@ namespace TennisSimulator.Test
     [TestClass]
     public class TennisGameTest
     {
-        TennisMatch tennisGame;
+        TennisManager tennisGame;
 
         [TestInitialize]
         public void Init()
         {
-            tennisGame = new TennisMatch(MatchType.BestOfThree);
+            tennisGame = new TennisManager();
+            tennisGame.SetBestOfThree();
+            tennisGame.StartNewMatch();
         }
 
         [TestMethod]
@@ -577,17 +579,17 @@ namespace TennisSimulator.Test
             SimulateTennisMatch(scoreSequence, expectedGames, expectedSets, expectedMatches);
         }
 
-        private void ProcessScoreSequence(char[] scoreSequence)
+        private void ProcessScoreSequence(TennisMatch tennisMatch, char[] scoreSequence)
         {
             foreach (char scoreChar in scoreSequence)
             {
                 switch (char.ToUpper(scoreChar))
                 {
                     case 'A':
-                        tennisGame.ScorePointForPlayer(Constants.PlayerOneId);
+                        tennisMatch.ScorePointForPlayer(Players.PlayerOne);
                         break;
                     case 'B':
-                        tennisGame.ScorePointForPlayer(Constants.PlayerTwoId);
+                        tennisMatch.ScorePointForPlayer(Players.PlayerTwo);
                         break;
                     default:
                         throw new NotImplementedException();
@@ -597,11 +599,13 @@ namespace TennisSimulator.Test
 
         private void SimulateTennisMatch(char[] scoreSequence, (int, int) expectedGames, (int, int) expectedSets, (int, int) expectedMatches)
         {
-            ProcessScoreSequence(scoreSequence);
+            TennisMatch tennisMatch = tennisGame.GetOngoingMatch();
 
-            var resultGames = tennisGame.GetGames();
-            var resultSets = tennisGame.GetSets();
-            var resultMatches = tennisGame.GetMatches();
+            ProcessScoreSequence(tennisMatch, scoreSequence);
+
+            var resultGames = tennisGame.GetGames(tennisMatch);
+            var resultSets = tennisGame.GetSets(tennisMatch);
+            var resultMatches = tennisGame.GetMatches(tennisMatch);
 
             Assert.AreEqual(expectedGames, resultGames);
             Assert.AreEqual(expectedSets, resultSets);

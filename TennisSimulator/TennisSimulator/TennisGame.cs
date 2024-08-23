@@ -6,7 +6,7 @@ namespace TennisSimulator
 
     public class TennisGame : TennisRules
     {
-        public override void ScorePointForPlayer(string player)
+        public override void ScorePointForPlayer(Players player)
         {
             IncreaseSetScoreForPlayer(player);
 

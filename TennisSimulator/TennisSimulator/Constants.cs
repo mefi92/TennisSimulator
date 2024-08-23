@@ -8,8 +8,6 @@ namespace TennisSimulator
 {
     public static class Constants
     {
-        public const string PlayerOneId = "PlayerOne";
-        public const string PlayerTwoId = "PlayerTwo";
         public const int GamePointThreshold = 4;
         public const int SetPointThreshold = 6;
         public const int PointDifferenceThreshold = 2;
