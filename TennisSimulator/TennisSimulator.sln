@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisSimulator", "TennisSi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisSimulator.Test", "TennisSimulator.Test\TennisSimulator.Test.csproj", "{B84D3327-97FE-48E8-80AC-EA5A1A4B7744}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayConsole", "DisplayConsole\DisplayConsole.csproj", "{9B0C709F-CA3F-4F8D-BDC4-847CDAD973FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B84D3327-97FE-48E8-80AC-EA5A1A4B7744}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B84D3327-97FE-48E8-80AC-EA5A1A4B7744}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B84D3327-97FE-48E8-80AC-EA5A1A4B7744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0C709F-CA3F-4F8D-BDC4-847CDAD973FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0C709F-CA3F-4F8D-BDC4-847CDAD973FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0C709F-CA3F-4F8D-BDC4-847CDAD973FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0C709F-CA3F-4F8D-BDC4-847CDAD973FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
