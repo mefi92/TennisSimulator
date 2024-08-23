@@ -7,7 +7,7 @@ class ScoreBoard
 {
     public static void Main(String[] args)
     {
-        TennisMatch match = new TennisMatch();
+        TennisMatch match = new TennisMatch(TennisSimulator.MatchType.BestOfThree);
 
         char[] scoreSequence = { 'A', 'A', 'A', 'B', 'B', 'B', 'A', 'B', 'B', 'B',
                                      'A', 'A', 'A', 'A',

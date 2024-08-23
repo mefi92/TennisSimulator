@@ -13,12 +13,7 @@ namespace TennisSimulator
         public const int GamePointThreshold = 4;
         public const int SetPointThreshold = 6;
         public const int PointDifferenceThreshold = 2;
-        public static MatchType MatchType = MatchType.BestOfThree;
-    }
-
-    public enum MatchType
-    {
-        BestOfThree,
-        BestOfFive,
-    }
+        public const int BestOfThreeThreshold = 2;
+        public const int BestOfFiveThreshold = 3;
+    }    
 }

@@ -3,14 +3,12 @@ namespace TennisSimulator.Test
     [TestClass]
     public class TennisGameTest
     {
-        //IScoreBoard tennisGame;
         TennisMatch tennisGame;
 
         [TestInitialize]
         public void Init()
         {
-            //tennisGame = new TennisGameOld();
-            tennisGame = new TennisMatch();
+            tennisGame = new TennisMatch(MatchType.BestOfThree);
         }
 
         [TestMethod]

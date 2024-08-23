@@ -1,0 +1,2 @@
+-user input validation
+-scoreforplayer string input helyett enum

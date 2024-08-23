@@ -11,8 +11,6 @@ namespace TennisSimulator
     public class TennisSet : TennisRules
     {
         public List<TennisGame> games = new List<TennisGame>();
-        public int PlayerOneScore { get; private set; } = 0;
-        public int PlayerTwoScore { get; private set; } = 0;
 
         public TennisSet()
         {
@@ -61,33 +59,10 @@ namespace TennisSimulator
             return games[0];
         }
 
-        private void IncreaseSetScoreForPlayer(string player)
-        {
-            switch (player)
-            {
-                case Constants.PlayerOneId:
-                    PlayerOneScore += 1; break;
-                case Constants.PlayerTwoId:
-                    PlayerTwoScore += 1; break;
-                default:
-                    throw new InvalidDataException();
-            }
-        }
-
         private bool HasSetWinner()
         {
             return (PlayerOneScore >= Constants.SetPointThreshold || PlayerTwoScore >= Constants.SetPointThreshold) &&
                  HasRequiredPointDifference(PlayerOneScore, PlayerTwoScore);
-        }
-
-        private bool HasRequiredPointDifference(int score1, int score2)
-        {
-            return Math.Abs(score1 - score2) >= Constants.PointDifferenceThreshold;
-        }
-
-        private void SetWinner()
-        {
-            Winner = PlayerOneScore > PlayerTwoScore ? Constants.PlayerOneId : Constants.PlayerTwoId;
         }
     }
 }

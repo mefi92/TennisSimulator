@@ -9,13 +9,12 @@ namespace TennisSimulator
 {
     public class TennisMatch : TennisRules
     {
-        // best of 3 or 5 enum?
         private List<TennisSet> sets = new List<TennisSet>();
-        public int PlayerOneScore { get; private set; } = 0;
-        public int PlayerTwoScore { get; private set; } = 0;
+        private readonly MatchType matchType;
 
-        public TennisMatch()
+        public TennisMatch(MatchType matchType)
         {
+            this.matchType = matchType;
             StartNewSet();
         }
 
@@ -48,19 +47,6 @@ namespace TennisSimulator
             }
         }
 
-        private void IncreaseSetScoreForPlayer(string player)
-        {
-            switch (player)
-            {
-                case Constants.PlayerOneId:
-                    PlayerOneScore += 1; break;
-                case Constants.PlayerTwoId:
-                    PlayerTwoScore += 1; break;
-                default:
-                    throw new InvalidDataException();
-            }
-        }
-
         private void SetWinnerOrNewGame()
         {
             if (HasMatchWinner())
@@ -76,13 +62,8 @@ namespace TennisSimulator
 
         private bool HasMatchWinner()
         {
-            int requiredSetsToWin = Constants.MatchType == MatchType.BestOfThree ? 2 : 3;
+            int requiredSetsToWin = matchType == MatchType.BestOfThree ? Constants.BestOfThreeThreshold : Constants.BestOfFiveThreshold;
             return PlayerOneScore == requiredSetsToWin || PlayerTwoScore == requiredSetsToWin;
-        }
-
-        private void SetWinner()
-        {
-            Winner = PlayerOneScore > PlayerTwoScore ? Constants.PlayerOneId : Constants.PlayerTwoId;
         }
 
         public string GetMatchStatus()
