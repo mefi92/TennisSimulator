@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisSimulator", "TennisSimulator\TennisSimulator.csproj", "{96BD5789-6407-4EFA-B0DD-0C146BB2DF1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisSimulator.Test", "TennisSimulator.Test\TennisSimulator.Test.csproj", "{B84D3327-97FE-48E8-80AC-EA5A1A4B7744}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96BD5789-6407-4EFA-B0DD-0C146BB2DF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BD5789-6407-4EFA-B0DD-0C146BB2DF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BD5789-6407-4EFA-B0DD-0C146BB2DF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BD5789-6407-4EFA-B0DD-0C146BB2DF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B84D3327-97FE-48E8-80AC-EA5A1A4B7744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B84D3327-97FE-48E8-80AC-EA5A1A4B7744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B84D3327-97FE-48E8-80AC-EA5A1A4B7744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B84D3327-97FE-48E8-80AC-EA5A1A4B7744}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F25D2F95-2FBA-4E60-A4D0-6B2B4EE2721D}
+	EndGlobalSection
+EndGlobal
